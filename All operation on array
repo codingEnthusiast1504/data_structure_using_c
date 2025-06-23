@@ -1,0 +1,155 @@
+INPUT
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{ int a[70],no,size,pos,mid,s,e,i,temp,j,ch;
+  clrscr();
+  printf("1:TRAVERSING\n");
+  printf("2:INSERTION\n");
+  printf("3:DELETION\n");
+  printf("4:LINEAR SEARCH\n");
+  printf("5:BINARY SEARCH\n");
+  printf("6:BUBBLE SORT\n");
+  printf("enter your choice:");
+  scanf("%d",&ch);
+  switch(ch)
+  { case 1:
+    printf("enter the size:");
+    scanf("%d",&size);
+    printf("enter the array elements:");
+    for(i=0;i<size;i++)
+    { scanf("%d",&a[i]);
+    }
+    for(i=0;i<size;i++)
+    { printf("%d",a[i]);
+    }
+    break;
+    case 2:
+    printf("enter the size:");
+    scanf("%d",&size);
+    printf("enter the array elements:");
+    for(i=0;i<size;i++)
+    { scanf("%d",&a[i]);
+    }
+    printf("enter the no:");
+    scanf("%d",&no);
+    printf("enter the position:");
+    scanf("%d",&pos);
+    for(i=size-1;i>pos-1;i--)
+    { a[i+1]=a[i];
+    }
+    a[pos-1]=no;
+    size++;
+    printf("insert aaray:");
+    for(i=0;i<size;i++)
+    { printf("%d",a[i]);
+    }
+    break;
+    case 3:
+    printf("enter the size:");
+    scanf("%d",&size);
+    printf("enter the array elements:");
+    for(i=0;i<size;i++)
+    { scanf("%d",&a[i]);
+    }
+    printf("enter the position:");
+    scanf("%d",&pos);
+     for(i=pos-1;i<=size-1;i++)
+    { a[i]=a[i+1];
+    }
+    size--;
+    printf("deleted aaray:");
+    for(i=0;i<size;i++)
+    { printf("%d",a[i]);
+    }
+    break;
+    case 4:
+    printf("enter the size:");
+    scanf("%d",&size);
+    printf("enter the array elements:");
+    for(i=0;i<size;i++)
+    { scanf("%d",&a[i]);
+    }
+   printf("enter the no:");
+   scanf("%d",&no);
+   for(i=0;i<size;i++)
+   if(a[i]==no)
+   { pos=i+1;
+   }
+   if(pos>0)
+   { printf("search is sucessful!=%d",pos);
+   }
+   else
+   { printf("search is unsucessful!");
+   }
+    break;
+    case 5:
+    printf("enter the size:");
+    scanf("%d",&size);
+    printf("enter the array elements:");
+    for(i=0;i<size;i++)
+    { scanf("%d",&a[i]);
+    }
+    printf("enter the no:");
+    scanf("%d",&no);
+    s=0;
+    e=size-1;
+    mid=(s+e)/2;
+    while(s<=e)
+    { if(a[mid]<no)
+      s=mid+1;
+      else if(a[mid]==no)
+      { printf("%dsearch is found%d",no,mid+1);
+	break;
+      }
+      else
+      e=mid-1;
+      mid=(s+e)/2;
+      }
+      if(s>e)
+      { printf("search is not found%d",no);
+      }
+      break;
+      case 6:
+      printf("enter the size:");
+    scanf("%d",&size);
+    printf("enter the array elements:");
+    for(i=0;i<size;i++)
+    { scanf("%d",&a[i]);
+    }
+     for(i=0;i<size-1;i++)
+     {
+     for(j=0;j<size;j++)
+     {if(a[i]>a[i+1])
+     { temp=a[i];
+       a[i]=a[i+1];
+       a[i+1]=temp;
+     }
+   }
+   printf("sorted aaray:");
+   for(i=0;i<size;i++)
+   { printf("%d",a[i]);
+    }
+   break;
+   default:
+   printf("your choice is invalid");
+   break;
+   }
+   getch();
+}
+
+OUTPUT
+
+
+
+
+
+
+
+
+
+
+
+
+
