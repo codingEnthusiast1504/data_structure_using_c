@@ -1,0 +1,36 @@
+
+input
+#include<stdio.h>
+#include<conio.h>
+void main()
+{ int a[20],i,size,no,s,e,mid;
+  clrscr();
+  printf("enter the size:");
+  scanf("%d",&size);
+  printf("enter the elements:");
+  for(i=0;i<size;i++)
+  { scanf("%d",&a[i]);
+  }
+  printf("enter the no for search:");
+  scanf("%d",&no);
+  s=0;
+  e=size-1;
+  mid=(s+e)/2;
+  while(s<=e)
+  {
+  if(a[mid]<no)
+  s=mid+1;
+  else if(a[mid]==no)
+  { printf("search is found%d",no,mid+1);
+  }
+  else
+  e=mid-1;
+  mid=(s+e)/2;
+  }
+  if(s>e)
+  { printf("search is not found:");
+  }
+  getch();
+}
+
+
