@@ -1,0 +1,28 @@
+INPUT
+#include<stdio.h>
+#include<conio.h>
+void main()
+{ int a[30],i,pos,size;
+  clrscr();
+  printf("enter the size of aaray:");
+  scanf("%d",&size);
+  printf("enter the aaray elements:");
+  for(i=0;i<size;i++)
+  { scanf("%d",&a[i]);
+  }
+  printf("enter the position:");
+  scanf("%d",&pos);
+  for(i=pos-1;i<=size-1;i++)
+  { a[i]=a[i+1];
+  }
+  size--;
+  printf("deleted aaray:");
+  for(i=0;i<size;i++)
+  { printf("%d",a[i]);
+  }
+  getch();
+  }
+
+
+
+
